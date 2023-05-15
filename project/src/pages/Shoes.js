@@ -11,72 +11,72 @@ export default function Shoes() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // const shoeContext = useContext(ShoeContext);
-  // const shoe = shoeContext.getAllProducts() || [];
+  const shoeContext = useContext(ShoeContext);
+  const shoe = shoeContext.getAllProducts() || [];
 
-  // const [searchOptions, setSearchOptions] = useState({})
+  const [searchOptions, setSearchOptions] = useState({})
 
-  // const [search, setSearch] = useState({})
-  // const [formFields, setFormFields] = useState(
-  //   {
-  //     name: '',
-  //     brand_id: '0',
-  //     color_id: '0',
-  //     size_id: '0',
-  //     gender_id: '0',
-
-
-  //   }
-  // )
-  // console.log(formFields + "form fields")
-  // const updateFormFields = (event) => {
-  //   setFormFields({
-  //     ...formFields,
-  //     [event.target.name]: event.target.value
-  //   });
-
-  // };
-
-  // useEffect(() => {
-  //   (async () => {
-  //     await shoeContext.getShoeSearch(search)
-  //   })();
-  // }, [search])
-
-  // useEffect(() => {
-  //   (() => {
-  //     const searchOptions = shoeContext.getOptionsList()
-  //     setSearchOptions(searchOptions);
-  //     console.log(searchOptions)
-  //   })();
-  // }, []);
+  const [search, setSearch] = useState({})
+  const [formFields, setFormFields] = useState(
+    {
+      name: '',
+      brand_id: '0',
+      color_id: '0',
+      size_id: '0',
+      gender_id: '0',
 
 
+    }
+  )
+  console.log(formFields + "form fields")
+  const updateFormFields = (event) => {
+    setFormFields({
+      ...formFields,
+      [event.target.name]: event.target.value
+    });
 
-  // const searchShoes = () => {
-  //   console.log(formFields)
-  //   const query = { ...formFields };
-  //   setSearch(query)
-  // }
+  };
 
-  // const generateSelectOptions = (choices) => {
-  //   if (choices) {
-  //     return choices.map((choice, index) => {
-  //       return (
-  //         <option key={index} value={choice[0]}>
-  //           {choice[1]}
-  //         </option>
-  //       );
-  //     });
-  //   }
-  // };
+  useEffect(() => {
+    (async () => {
+      await shoeContext.getShoeSearch(search)
+    })();
+  }, [search])
+
+  useEffect(() => {
+    (() => {
+      const searchOptions = shoeContext.getOptionsList()
+      setSearchOptions(searchOptions);
+      console.log(searchOptions)
+    })();
+  }, []);
+
+
+
+  const searchShoes = () => {
+    console.log(formFields)
+    const query = { ...formFields };
+    setSearch(query)
+  }
+
+  const generateSelectOptions = (choices) => {
+    if (choices) {
+      return choices.map((choice, index) => {
+        return (
+          <option key={index} value={choice[0]}>
+            {choice[1]}
+          </option>
+        );
+      });
+    }
+  };
 
 
 
 
   return <>
 
-    <h1> Display Shoes+ search form </h1>
+    <h1 className="mt-4"> Search </h1>
 
     <div className="container-fluid mt-4">
       <div className="row">
@@ -245,100 +245,127 @@ export default function Shoes() {
         </Offcanvas>
 
 
-        <div className="col-md-9 ">
-            <div className="row  mt-4">
-              <div className="col-md-4 mb-3  ">
-                <div className="card">
-                  {/* <img src="..." className="card-img-top" alt="..." /> */}
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 mb-3 ">
-                <div className="card">
-                  {/* <img src="..." className="card-img-top" alt="..." /> */}
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 mb-3  ">
-                <div className="card">
-                  {/* <img src="..." className="card-img-top" alt="..." /> */}
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 mb-3 ">
-                <div className="card">
-                  {/* <img src="..." className="card-img-top" alt="..." /> */}
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 mb-3  ">
-                <div className="card">
-                  {/* <img src="..." className="card-img-top" alt="..." /> */}
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 mb-3 ">
-                <div className="card">
-                  {/* <img src="..." className="card-img-top" alt="..." /> */}
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 mb-3  ">
-                <div className="card">
-                  {/* <img src="..." className="card-img-top" alt="..." /> */}
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 mb-3 ">
-                <div className="card">
-                  {/* <img src="..." className="card-img-top" alt="..." /> */}
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-           
-         
-           
-           
 
+
+
+        {/* <div className="col-md-9 ">
+          <div className="row  mt-4">
+            <div className="col-md-4 mb-3  ">
+              <Card >
+                <Card.Img variant="top" src=".." />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
             </div>
-            
+            <div className="col-md-4 mb-3 ">
+              <Card >
+                <Card.Img variant="top" src=".." />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div className="col-md-4 mb-3  ">
+              <Card >
+                <Card.Img variant="top" src=".." />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div className="col-md-4 mb-3  ">
+              <Card >
+                <Card.Img variant="top" src=".." />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div className="col-md-4 mb-3  ">
+              <Card >
+                <Card.Img variant="top" src=".." />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div className="col-md-4 mb-3  ">
+              <Card >
+                <Card.Img variant="top" src=".." />
+                <Card.Body>
+                  <Card.Title>Card Title</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the
+                    bulk of the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+              </Card>
+            </div>
+          </div> */}
+
+
+        <div className="col-md-9 ">
+          <div className="row  mt-4">
+
+            {shoe.length ? (
+
+              shoe.map((shoe) => {
+                return (
+                  <div class="col-md-4 mb-3">
+                    <Card >
+                      {/* <Card.Img variant="top" src=".." /> */}
+                      <Card.Body>
+                        <Card.Title>{shoe.name}</Card.Title>
+                        <Card.Text>
+                          Some quick example text to build on the card title and make up the
+                          bulk of the card's content.
+                        </Card.Text>
+                        <Button variant="primary">Go somewhere</Button>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                );
+              })
+
+            ) : <div>
+              <h5>No shoes found</h5>
+            </div>}
+
+
+          </div>
+
         </div>
-        
-
-
       </div>
+
+
+
     </div>
 
 
@@ -399,6 +426,7 @@ export default function Shoes() {
         ) : <div>
           <h5>No shoes found</h5>
         </div>}
+
       </div>
 
     </div> */}
